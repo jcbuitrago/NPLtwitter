@@ -14,7 +14,7 @@ from nltk.stem import wordnet, WordNetLemmatizer
 
 ##### TRAINING SECTION #####
 
-def train_function():
+def train_function_wordlist():
     
     ## Import the csv
     train_df = pd.read_csv("C:/Users/jcbui/OneDrive/Documents/Documentos/Endava/DataS/train.csv")
@@ -47,9 +47,9 @@ def train_function():
     for word in tokens_without_stopwords:
         fdist[word.lower()]+=1
     
-    word_frq_dict = dict(fdist.most_common(1000))
-    
+    word_frq_dict = dict(fdist.most_common(1000))   
     word_list = list(word_frq_dict.keys())
+    
     ## Stemming, return the root of the words, may not work because of ambiguities. 
     ## To fix this we may use Lemmatization. It uses a dictionary to understand the proper root of the word. 
     
